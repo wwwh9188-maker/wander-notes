@@ -229,6 +229,11 @@
     document.getElementById('placeDialog').showModal();
   }
 
+  window.cancelPlaceDialog = () => {
+    organizingInspirationId = null;
+    document.getElementById('placeDialog').close();
+  };
+
   document.getElementById('addPlace').onclick = openBlankPlaceDialog;
   document.getElementById('savePlace').onclick = event => {
     event.preventDefault();
@@ -495,3 +500,4 @@
   renderWishlistPlaces();
   renderDynamicCalendar();
 })();
+
