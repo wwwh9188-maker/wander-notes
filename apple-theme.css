@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Wandershell Hand';
+  src: url('assets/wandershell-hand.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --color-bg: #F7F6F1;
   --color-surface: #FFFFFF;
@@ -26,6 +34,8 @@
   --space-6: 48px;
   --content-max: 1440px;
   --font-sans: Inter, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-hand: 'Wandershell Hand', 'Kaiti SC', STKaiti, KaiTi, 'FangSong SC', serif;
+  --font-editorial: 'Songti SC', STSong, SimSun, 'Noto Serif SC', serif;
 }
 
 * { box-sizing: border-box; }
@@ -89,9 +99,10 @@ img, svg { display: block; max-width: 100%; }
 .brand {
   flex: 0 0 auto;
   color: var(--color-text);
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -.04em;
+  font-family: var(--font-hand);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: .02em;
   line-height: 1.05;
 }
 
@@ -99,6 +110,7 @@ img, svg { display: block; max-width: 100%; }
   display: block;
   margin-top: 5px;
   color: var(--color-muted);
+  font-family: var(--font-sans);
   font-size: 9px;
   font-weight: 600;
   letter-spacing: .26em;
@@ -165,10 +177,10 @@ main {
 
 .topbar h1, .section-head h2, .trip-cover h2, .day-head h3, .mini-title h3, .map-head h3, .modal h2 {
   margin: 0;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  letter-spacing: -.045em;
-  line-height: 1.15;
+  font-family: var(--font-hand);
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 1.25;
 }
 
 .topbar h1 { font-size: clamp(31px, 4.2vw, 52px); }
@@ -201,6 +213,16 @@ main {
 }
 
 .section-head h2 { font-size: clamp(29px, 3.8vw, 46px); }
+.section-head p {
+  margin: 9px 0 0;
+  color: var(--color-muted);
+  font-family: var(--font-editorial);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .02em;
+  line-height: 1.7;
+  text-transform: none;
+}
 .section-head > div:first-child { position: relative; }
 .section-head > div:first-child::after {
   content: '';
@@ -424,7 +446,7 @@ input:focus, select:focus, textarea:focus {
   gap: 12px;
   margin: 2px 3px 13px;
 }
-.world-map-toolbar strong { display: block; font-size: 15px; font-weight: 700; }
+.world-map-toolbar strong { display: block; font-family: var(--font-hand); font-size: 19px; font-weight: 400; }
 .world-map-toolbar span { color: var(--color-muted); font-size: 10px; }
 .world-map-tools { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
 .map-tool, .world-map-tools button { min-height: 32px; padding: 6px 9px; border-radius: 10px; font-size: 11px; }
@@ -502,8 +524,8 @@ input:focus, select:focus, textarea:focus {
 }
 .landing-entry:hover { transform: translateY(-3px); border-color: #D0D7B5; background: #FBFCF5; }
 .landing-entry:active { transform: scale(.99); }
-.landing-entry b { display: block; margin-bottom: 8px; font-size: 18px; font-weight: 700; }
-.landing-entry small { color: var(--color-muted); font-size: 12px; }
+.landing-entry b { display: block; margin-bottom: 8px; font-family: var(--font-hand); font-size: 23px; font-weight: 400; }
+.landing-entry small { color: var(--color-muted); font-family: var(--font-editorial); font-size: 12px; }
 .landing-entry::after {
   content: '↗';
   position: absolute;
@@ -667,7 +689,7 @@ input:focus, select:focus, textarea:focus {
   gap: 15px;
   margin-bottom: 22px;
 }
-.day-head h3, .mini-title h3, .map-head h3 { font-size: 23px; }
+.day-head h3, .mini-title h3, .map-head h3 { font-size: 25px; }
 .day-head p, .mini-title p, .map-head p { margin: 4px 0 0; color: var(--color-muted); font-size: 12px; }
 .day-title-edit, .stop-title-edit, .editable-note, .editable-hours { cursor: text; border-radius: 6px; }
 .day-title-edit:hover, .stop-title-edit:hover, .editable-note:hover, .editable-hours:hover { background: var(--color-apple-tint); }
@@ -1034,7 +1056,7 @@ dialog {
 }
 dialog::backdrop { background: rgba(32, 34, 31, .42); }
 .modal { width: min(480px, 92vw); padding: 28px; }
-.modal h2 { margin-bottom: 23px; font-size: 28px; }
+.modal h2 { margin-bottom: 23px; font-size: 32px; }
 .modal h2::after { content: ''; display: block; width: 42px; height: 7px; margin-top: 10px; background: var(--color-apple); clip-path: polygon(0 30%, 100% 0, 92% 100%, 5% 80%); }
 .modal label { display: block; margin: 13px 0 6px; color: var(--color-muted); font-size: 11px; font-weight: 600; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 24px; }
@@ -1311,7 +1333,13 @@ dialog::backdrop { background: rgba(32, 34, 31, .42); }
   gap: 20px;
 }
 .inspiration-board-head { margin-bottom: 18px; }
-.inspiration-board-head h3, .wishlist-heading h3, .planning-pool-head h3 { margin: 3px 0 4px; font-size: 24px; }
+.inspiration-board-head h3, .wishlist-heading h3, .planning-pool-head h3 {
+  margin: 3px 0 4px;
+  font-family: var(--font-hand);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: .01em;
+}
 .inspiration-board-head p, .planning-pool-head p { margin: 0; color: var(--color-muted); font-size: 12px; }
 .inspiration-count {
   flex: 0 0 auto;
