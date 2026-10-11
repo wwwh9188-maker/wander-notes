@@ -1501,6 +1501,154 @@ dialog::backdrop { background: rgba(32, 34, 31, .42); }
 @media (max-width: 600px) {
   main { padding-left: 12px; padding-right: 12px; }
 
+  /* Keep the inspiration inbox visible without letting an empty state occupy a screen. */
+  #home .inspiration-board {
+    margin-bottom: 22px;
+    padding: 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  #home .inspiration-board-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 6px 10px;
+    margin-bottom: 10px;
+  }
+
+  #home .inspiration-board-head > div { min-width: 0; }
+  #home .inspiration-board-head h3 {
+    margin-top: 2px;
+    font-size: 23px;
+    line-height: 1.15;
+  }
+  #home .inspiration-board-head p { display: none; }
+  #home .inspiration-count {
+    align-self: center;
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+
+  #home .inspiration-empty {
+    min-height: 0;
+    padding: 11px 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px 12px;
+    color: var(--color-muted);
+    background: rgba(255, 255, 255, .62);
+    border-radius: var(--radius-md);
+    text-align: left;
+  }
+  #home .inspiration-empty b {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  #home .inspiration-empty p { display: none; }
+  #home .inspiration-empty button {
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  /* Two compact wish cards per row on phones. */
+  #home .places {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  #home .place img { aspect-ratio: 4 / 3; }
+  #home .place-body { padding: 11px; }
+  #home .place-title-line { gap: 5px; }
+  #home .place h3 {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+  #home .place p {
+    margin: 5px 0;
+    font-size: 10px;
+  }
+  #home .tags { gap: 4px; }
+  #home .tags span {
+    padding: 4px 6px;
+    font-size: 8px;
+  }
+  #home .place-state {
+    padding: 3px 5px;
+    font-size: 7px;
+  }
+  #home .place-selector {
+    top: 8px;
+    left: 8px;
+    width: 25px;
+    height: 25px;
+  }
+  #home .place-source { margin-top: 7px; }
+  #home .place-plan-actions { margin-top: 9px; }
+  #home .place-plan-actions button {
+    width: 100%;
+    min-height: 34px;
+    padding: 7px 6px;
+    font-size: 9px;
+  }
+
+  /* Fit all seven weekdays inside the viewport instead of horizontally scrolling. */
+  #calendar .calendar-wrap {
+    padding: 8px 4px 12px;
+    overflow: visible;
+    gap: 14px;
+    border-radius: var(--radius-md);
+  }
+  #calendar .calendar-wrap > div { min-width: 0; }
+  #calendar .calendar,
+  #calendar #calendarGrid {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 3px;
+  }
+  #calendar .calendar .weekday {
+    min-width: 0;
+    padding: 4px 1px;
+    font-size: 9px;
+  }
+  #calendar .day {
+    min-width: 0;
+    min-height: 60px;
+    padding: 5px 4px;
+    border-radius: 8px;
+  }
+  #calendar .day-number { font-size: 10px; }
+  #calendar .event,
+  #calendar .calendar-event {
+    margin-top: 3px;
+    padding: 3px;
+    overflow: hidden;
+    font-size: 7px;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #calendar .more-events {
+    margin-top: 3px;
+    font-size: 7px;
+  }
+  #calendar .calendar-page-actions {
+    display: grid;
+    grid-template-columns: 42px minmax(72px, auto) 42px;
+    gap: 7px;
+  }
+  #calendar .calendar-page-actions button {
+    width: 100%;
+    min-height: 38px;
+    padding: 7px;
+  }
+  #calendar .calendar-page-actions .primary {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
   #dayContent.card { padding: 15px 12px 20px; }
 
   .day-head {
@@ -1685,3 +1833,4 @@ dialog::backdrop { background: rgba(32, 34, 31, .42); }
   .route-connect,
   .route-refresh { margin-left: auto; }
 }
+
