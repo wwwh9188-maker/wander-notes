@@ -1,4 +1,4 @@
-# Wander Notes 漫游手帐
+# 蜗行 WANDERSHELL
 
 一个手帐 / 拼贴风格的旅行规划与旅行账本网页。
 
